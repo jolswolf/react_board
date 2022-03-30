@@ -12,9 +12,9 @@
     <a href="#"><strong>Visit the web »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/react_board/issues">Report Bug</a>
+    <a href="https://github.com/jols_wolf/react_board/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/react_board/issues">Request Feature</a>
+    <a href="https://github.com/jols_wolf/react_board/issues">Request Feature</a>
   </p>
 </div>
 <br>  
