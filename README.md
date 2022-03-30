@@ -17,6 +17,4 @@
     <a href="https://github.com/github_username/react_board/issues">Request Feature</a>
   </p>
 </div>
-<br>
-# About
-garfield   
+<br>  
