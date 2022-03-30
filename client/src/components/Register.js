@@ -17,7 +17,6 @@ const Register = () => {
 
     //register func
     const register = () => {
-        console.log("inside register func");
         const {name, email, password} = user;
         if (name && email && password){
             axios.post("http://localhost:3001/register", user )
