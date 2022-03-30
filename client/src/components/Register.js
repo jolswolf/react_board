@@ -33,7 +33,7 @@ const Register = () => {
                     <span>
                         Already have an account?
                         <a href="#" target="_blank">
-                            Log in
+                            Login
                         </a>
                     </span>
                     <div>
@@ -50,7 +50,7 @@ const Register = () => {
                             </div>
                             <div>
                                 <div>
-                                    <input type="password" id="create-account-email" name="password" value={user.password} onChange={handleChange}    placeholder="password"/>
+                                    <input type="password" id="create-account-email" name="password" value={user.password} onChange={handleChange} placeholder="password"/>
                                 </div>
                             </div>
                             <div>

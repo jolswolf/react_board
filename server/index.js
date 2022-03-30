@@ -7,6 +7,7 @@ const PostModel = require("./models/posts")
 const cors = require("cors");
 
 app.use(express.json());
+app.use(express.urlencoded());
 app.use(cors());
 
 require('dotenv').config();
@@ -14,18 +15,10 @@ require('dotenv').config();
 mongoose.connect(process.env.DB_URI);
 
 
+
   ///////////////
  //////GET//////
 ///////////////
-app.get("/getUsers", (req, res) => {
-    UserModel.find({}, (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            res.json(result);
-        }
-    });
-});
 app.get("/getPosts", (req, res) => {
     PostModel.find({}, (err, result) => {
         if (err) {
@@ -40,13 +33,6 @@ app.get("/getPosts", (req, res) => {
   ////////////////
  //////POST//////
 ////////////////
-app.post("/createUser", async (req, res) => {
-    const user = req.body;
-    const newUser = new UserModel(user);
-    await newUser.save();
-
-    res.json(user);
-});
 app.post("/createPost", async (req, res) => {
     const post = req.body;
     const newPost = new PostModel(post);
@@ -54,6 +40,22 @@ app.post("/createPost", async (req, res) => {
 
     res.json(post);
 });
+
+app.post("/login",(req, res) => {
+    const {email, password} = req.body;
+    UserModel.findone({email:email}, (err, user) => {
+        if(user){
+            if(password === user.password){
+                res.send({message: "login succesful", user:user});  
+            }else{
+                res.send({message: "wrong password or email"})
+            }
+        }else{
+            res.send("not registered");
+        }
+    });
+});
+
 
 
 app.listen(process.env.PORT, () => {
