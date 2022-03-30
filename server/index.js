@@ -43,19 +43,37 @@ app.post("/createPost", async (req, res) => {
 
 app.post("/login",(req, res) => {
     const {email, password} = req.body;
-    UserModel.findone({email:email}, (err, user) => {
+    UserModel.findOne({email:email}, (err, user) => {
         if(user){
             if(password === user.password){
-                res.send({message: "login succesful", user:user});  
+                res.json({message: "login succesful", user:user});  
             }else{
-                res.send({message: "wrong password or email"})
+                res.json({message: "wrong password or email"})
             }
         }else{
-            res.send("not registered");
+            res.json("not registered");
         }
     });
 });
 
+app.post("/register", (req, res) => {
+    console.log(req.body);
+    const {name, email, password} = req.body;
+    UserModel.findOne({email:email}, (err, user => {
+        if(user){
+            res.send({message:"user already exists"});
+        }else{
+            const user = new UserModel({name, email, password});
+            user.save(err => {
+                if(err){
+                    res.json(err);
+                }else{
+                    res.json({message:"succesful"});
+                }
+            });
+        }
+    }))
+});
 
 
 app.listen(process.env.PORT, () => {
