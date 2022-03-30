@@ -9,6 +9,10 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String,
+        required: true,
+    },
 });
 
 const PostModel = mongoose.model("posts", PostSchema);

@@ -6,6 +6,7 @@ const Homepage = () =>{
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [image, setImage] = useState("");
 
 
     useEffect(() => {
@@ -15,8 +16,8 @@ const Homepage = () =>{
     }, []); 
 
     const createPost = () => {
-        Axios.post("http://localhost:3001/createPost", {title, content}).then((response) => {
-            setListOfPosts([...listOfPosts, {title, content}]);
+        Axios.post("http://localhost:3001/createPost", {title, content, image}).then((response) => {
+            setListOfPosts([...listOfPosts, {title, content, image}]);
         });
     };
   
@@ -33,6 +34,10 @@ const Homepage = () =>{
                 <label for="content" class="form-label">Content</label>
                 <input type="text" id="content" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
               </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="text" id="image" class="form-control" onChange={(event) => {setImage(event.target.value)}}/>
+              </div>
               <button onClick={createPost} class="btn btn-primary">Post</button>
             </form>
           </div>
@@ -44,6 +49,9 @@ const Homepage = () =>{
                   <div class="card-body">
                     <h1 class="card-title">{posts.title}</h1>
                     <p class="card-text">{posts.content}</p>
+                    <div>
+                      <img src="{posts.image}" alt=""/>
+                    </div>
                   </div>
                 </div> 
               );
