@@ -59,7 +59,7 @@ app.post("/login",(req, res) => {
 app.post("/register", (req, res) => {
     console.log(req.body);
     const {name, email, password} = req.body;
-    UserModel.findOne({email:email}, (err, user => {
+    UserModel.findOne({email:email}, (err, user) => {
         if(user){
             res.send({message:"user already exists"});
         }else{
@@ -72,7 +72,7 @@ app.post("/register", (req, res) => {
                 }
             });
         }
-    }))
+    });
 });
 
 

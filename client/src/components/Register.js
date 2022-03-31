@@ -19,8 +19,13 @@ const Register = () => {
     const register = () => {
         const {name, email, password} = user;
         if (name && email && password){
-            axios.post("http://localhost:3001/register", user )
-            .then(res => console.log(res));
+            try {
+                axios.post("http://localhost:3001/register", user )
+                .then(res => console.log(res));
+            }catch (error){
+                console.error(error.response.data);
+            }
+            
         }else{
             alert("err: invalid input");
         }
