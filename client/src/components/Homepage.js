@@ -50,7 +50,7 @@ const Homepage = () =>{
                     <h1 class="card-title">{posts.title}</h1>
                     <p class="card-text">{posts.content}</p>
                     <div>
-                      <img src="{posts.image}" alt=""/>
+                      <img src={posts.image} alt=""/>
                     </div>
                   </div>
                 </div> 

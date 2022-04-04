@@ -6,18 +6,15 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import { useState } from "react";
 
 function App(){
-    const [user, setLoginUser] = useState({
-
-    });
+    var activeUser = sessionStorage.getItem('activeUser');
     return(
         <div className="App">
             <Router>
                 <Routes>
-                    <Route exact path="/" element={user && user.id ? <Homepage /> : <Login />} />
-                    <Route path="/Login" element={<Login setLoginUser={setLoginUser}/>} />
+                    <Route exact path="/" element={activeUser? <Homepage /> : <Login />} />
+                    <Route path="/Login" element={<Login />} />
                     <Route path="/Register" element={<Register />} />
                 </Routes>
             </Router>
