@@ -28,22 +28,22 @@ const Homepage = () =>{
             <form>
               <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" id="title" class="form-control" onChange={(event) => {setTitle(event.target.value)}}/>
+                <input type="text" id="title" placeholder="A title for your post" class="form-control" onChange={(event) => {setTitle(event.target.value)}}/>
               </div>
               <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <input type="text" id="content" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
+                <input type="text" id="content" placeholder="The main body of your post" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
               </div>
               <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" id="image" class="form-control" onChange={(event) => {setImage(event.target.value)}}/>
+                <input type="text" id="image" placeholder="Image URL (imgur recommended)" class="form-control" onChange={(event) => {setImage(event.target.value)}}/>
               </div>
               <button onClick={createPost} class="btn btn-primary">Post</button>
             </form>
           </div>
           <br/><br/>
           <div>
-            {listOfPosts.map((posts) => {
+            {listOfPosts.slice(0).reverse().map((posts) => {
               return(
                 <div class="card">
                   <div class="card-body">

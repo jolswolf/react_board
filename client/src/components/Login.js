@@ -28,6 +28,8 @@ const Login = () => {
         navigate("/");
         })
     }
+
+
     return(
         <>
             <div>
@@ -39,7 +41,7 @@ const Login = () => {
                 <form action="#" autoComplete="off">
                     <div>
                         <div>
-                            <input type="text" name="email" value={user.email}  onChange={handleChange} placeholder="email"/>
+                            <input type="text" name="email" value={user.email}  onChange={handleChange} placeholder="Your email"/>
                         </div>
                     </div>
                     <div>
