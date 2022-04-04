@@ -41,7 +41,7 @@ const Homepage = () =>{
               <button onClick={createPost} class="btn btn-primary">Post</button>
             </form>
           </div>
-
+          <br/><br/>
           <div>
             {listOfPosts.map((posts) => {
               return(
@@ -50,7 +50,7 @@ const Homepage = () =>{
                     <h1 class="card-title">{posts.title}</h1>
                     <p class="card-text">{posts.content}</p>
                     <div>
-                      <img src={posts.image} alt=""/>
+                      <img style={{height: 200}} src={posts.image} alt=""/>
                     </div>
                   </div>
                 </div> 
