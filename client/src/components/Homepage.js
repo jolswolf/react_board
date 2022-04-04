@@ -35,7 +35,7 @@ const Homepage = () =>{
                 </div>
                 <div class="mb-3">
                   <label for="content" class="form-label">Content</label>
-                  <textarea type="text" id="content" placeholder="The main body of your post" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
+                  <textarea style={{resize: "none"}} rows="5" type="text" id="content" placeholder="The main body of your post" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
                 </div>
                 <div class="mb-3">
                   <label for="image" class="form-label">Image</label>
