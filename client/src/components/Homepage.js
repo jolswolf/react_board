@@ -16,9 +16,11 @@ const Homepage = () =>{
     }, []); 
 
     const createPost = () => {
+      if (title && content && image){
         Axios.post("http://localhost:3001/createPost", {title, content, image}).then((response) => {
             setListOfPosts([...listOfPosts, {title, content, image}]);
         });
+      }   
     };
   
 
@@ -52,6 +54,8 @@ const Homepage = () =>{
                     <div>
                       <img style={{height: 200}} src={posts.image} alt=""/>
                     </div>
+                    <hr class="border-2 border-top" />
+                    <small class="card-text fw-light">{posts._id}</small>
                   </div>
                 </div> 
               );
