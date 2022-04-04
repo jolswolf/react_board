@@ -31,46 +31,32 @@ const Login = () => {
 
 
     return(
-        <>
-            <div>
-                <div>
-                    Login
-                </div>
-            </div>
-            <div>
-                <form action="#" autoComplete="off">
-                    <div>
-                        <div>
-                            <input type="text" name="email" value={user.email}  onChange={handleChange} placeholder="Your email"/>
+        <div class="container">
+            <div class="card">
+                <div class="container">
+                    <br/>
+                    <h3 class="card-title">Login</h3>
+                    <br/>
+                    <form action="#" autoComplete="off">  
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email Address</label>
+                            <input id="emailInput" class="form-control" type="text" name="email" value={user.email}  onChange={handleChange} placeholder="Your email"/>                       
                         </div>
-                    </div>
-                    <div>
-                        <div>
-                            <input type="password" name="password" value={user.password}  onChange={handleChange} placeholder="Your password"/>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                Forgot your password?
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" onClick={login}>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">Password</label>
+                            <input type="password" id="passwordInput" class="form-control" name="password" value={user.password}  onChange={handleChange} placeholder="Your password"/>
+                        </div>                
+                        <button type="submit" class="btn btn-primary" onClick={login}>
                             Login
                         </button>
-                    </div>
-                </form>
+                        <br/>
+                    </form>      
+                    <a class="card-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot your password?</a>
+                    <a class="card-link" href="/Register">Create account</a>
+                    <br/><br/>
+                </div> 
             </div>
-            <div>
-                <a href="/Register">
-                    <span>
-                        Create account
-                    </span>
-                </a>
-            </div>
-        </>
+        </div>
     );
 }
 export default Login;
