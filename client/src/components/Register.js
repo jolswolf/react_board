@@ -37,7 +37,7 @@ const Register = () => {
                     <br/>
                     <h3 class="card-title">Create Account</h3>
                     <br/>
-                    <form>
+                    <form autocomplete="off">
                         <div class="mb-3">
                             <label for="userInput" class="form-label">Username</label>
                             <input id="userInput" class="form-control" type="text" name="name" value={user.name} onChange={handleChange} placeholder="A username"/>

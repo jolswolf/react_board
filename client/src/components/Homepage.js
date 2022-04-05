@@ -31,11 +31,11 @@ const Homepage = () =>{
               <form>
                 <div class="mb-3">
                   <label for="title" class="form-label">Title</label>
-                  <input type="text" id="title" placeholder="A title for your post" class="form-control" onChange={(event) => {setTitle(event.target.value)}}/>
+                  <input maxlength="100" type="text" id="title" placeholder="A title for your post" class="form-control" onChange={(event) => {setTitle(event.target.value)}}/>
                 </div>
                 <div class="mb-3">
                   <label for="content" class="form-label">Content</label>
-                  <textarea style={{resize: "none"}} rows="5" type="text" id="content" placeholder="The main body of your post" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
+                  <textarea maxlength="615" style={{resize: "none"}} rows="5" type="text" id="content" placeholder="The main body of your post" class="form-control" onChange={(event) => {setContent(event.target.value)}}/>
                 </div>
                 <div class="mb-3">
                   <label for="image" class="form-label">Image</label>
